@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="003-insert-demo-data" author="kskrebe">
+
+        <insert tableName="car">
+            <column name="id" valueNumeric="1"/>
+            <column name="brand" value="Volvo"/>
+            <column name="model" value="XC90"/>
+            <column name="production_year" valueNumeric="2022"/>
+            <column name="electric" valueBoolean="false"/>
+            <column name="category" value="A"/>
+        </insert>
+
+        <insert tableName="car">
+            <column name="id" valueNumeric="2"/>
+            <column name="brand" value="BMW"/>
+            <column name="model" value="i4"/>
+            <column name="production_year" valueNumeric="2024"/>
+            <column name="electric" valueBoolean="true"/>
+            <column name="category" value="B"/>
+        </insert>
+
+        <insert tableName="part">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Brake Pad"/>
+            <column name="price" valueNumeric="59.99"/>
+            <column name="car_id" valueNumeric="1"/>
+        </insert>
+
+        <insert tableName="part">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Battery Module"/>
+            <column name="price" valueNumeric="899.50"/>
+            <column name="car_id" valueNumeric="2"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
